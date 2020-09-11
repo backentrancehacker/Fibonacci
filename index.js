@@ -25,9 +25,15 @@ print(logo, 'blue')
 					print('Type in a whole number (n) to get the Fibonacci sequence for the nth term')
 					break
 				case 'mode':
+					if(!line[0]) {
+						print(`[Fibonacci] invalid mode undefined`, 'red')
+						break
+					}
 					let a = line[0].toUpperCase()
+					
 					if(['F1', 'F2', 'F3'].includes(a)) {
 						print(`[Fibonacci] switched mode to ${a}`, 'green')
+						mode = a
 					}
 					else {
 						print(`[Fibonacci] invalid mode ${a}`, 'red')
